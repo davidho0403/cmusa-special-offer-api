@@ -40,6 +40,24 @@ function calcDistance($store_list, $latitude, $longitude) {
     return $store_list;
 }
 
+function getTopThree($store_list) {
+    for ($i = 0; $i < count($store_list); $i++) {
+        for ($j = 0; $j < $i; $j++) {
+            if ($store_list[$i]['distance'] < $store_list[$j]['distance']) {
+                $temp = $store_list[$i];
+                $store_list[$i] = $store_list[$j];
+                $store_list[$j] = $temp;
+            }
+        }
+    }
+    $result = array();
+    $result[0] = $store_list[0];
+    $result[1] = $store_list[1];
+    $result[2] = $store_list[2];
+
+    return $result;
+}
+
 require_once('model.php');
 $Model = new Model();
 

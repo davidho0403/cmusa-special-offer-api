@@ -6,3 +6,9 @@ const getLocation = () => {
     }
 };
 
+const showError = (error) => {
+    if (error.PERMISSION_DENIED) {
+        window.alert("The User have denied the request for Geolocation.");
+    }
+};
+

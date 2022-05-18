@@ -27,3 +27,18 @@ const display = (res) => {
     $('#distance_3').html(res[2].distance);
 }
 
+const sendPosition = (position) => {
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    let data = {
+        latitude: latitude,
+        longitude: longitude,
+    };
+    let json = JSON.stringify(data);
+    $.ajax({
+        url: "../backend/core.php",
+        method: "POST",
+        data: json,
+        success: (res) => display(res),
+    });
+};

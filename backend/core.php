@@ -66,6 +66,12 @@ $parameter = json_decode(file_get_contents('php://input'), true);
 $latitude = $parameter['latitude'];
 $longitude = $parameter['longitude'];
 
+$sql = $Model->select('store');
+$store_list = $Model->execute($sql);
+
+$store_list = calcDistance($store_list, $latitude, $longitude);
+$topThree = getTopThree($store_list);
+
 $result = json_encode($topThree);
 header("Content-Type: application/json;");
 echo $result;

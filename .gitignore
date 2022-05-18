@@ -1,0 +1,14 @@
+# MISC
+.DS_Store
+
+# Test File
+*test.*
+
+# Test Folder
+*test
+
+# Composer
+/vendor/
+
+# dotenv
+.env

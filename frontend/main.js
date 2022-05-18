@@ -12,3 +12,18 @@ const showError = (error) => {
     }
 };
 
+const display = (res) => {
+    $('#store_id_1').html(res[0].store_name);
+    $('#store_id_2').html(res[1].store_name);
+    $('#store_id_3').html(res[2].store_name);
+    $('#store_address_1').html(res[0].store_address);
+    $('#store_address_2').html(res[1].store_address);
+    $('#store_address_3').html(res[2].store_address);
+    $('#store_phone_1').html(res[0].store_phone);
+    $('#store_phone_2').html(res[1].store_phone);
+    $('#store_phone_3').html(res[2].store_phone);
+    $('#distance_1').html(res[0].distance);
+    $('#distance_2').html(res[1].distance);
+    $('#distance_3').html(res[2].distance);
+}
+

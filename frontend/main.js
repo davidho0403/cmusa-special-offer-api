@@ -1,3 +1,7 @@
+$(() => {
+    getLocation();
+});
+
 const getLocation = () => {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(sendPosition, showError);
